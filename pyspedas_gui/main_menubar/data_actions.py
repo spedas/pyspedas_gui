@@ -1,6 +1,6 @@
 from PySide6.QtGui import QAction
 from .not_implemented_action import show_not_implemented_message
-
+from pyspedas_gui.panels import cdagui
 
 def add_data_actions(main_window, data_menu):
     # Add "Load data from plugin..." action to the "Data" menu
@@ -10,7 +10,7 @@ def add_data_actions(main_window, data_menu):
 
     # Add "Load data from CDAWeb..." action to the "Data" menu
     load_cdaweb_action = QAction("Load data from CDAWeb...", main_window)
-    load_cdaweb_action.triggered.connect(show_not_implemented_message)
+    load_cdaweb_action.triggered.connect(cdagui)
     data_menu.addAction(load_cdaweb_action)
 
     # Add "Load data via HAPI..." action to the "Data" menu
