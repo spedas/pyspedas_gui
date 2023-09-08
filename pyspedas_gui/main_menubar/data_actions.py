@@ -18,7 +18,7 @@ def add_data_actions(main_window, data_menu):
     load_hapi_action.triggered.connect(show_not_implemented_message)
     data_menu.addAction(load_hapi_action)
 
-    # Add "Load single CDF..." action to the "Data" menu
-    load_cdf_action = QAction("Load single CDF...", main_window)
-    load_cdf_action.triggered.connect(show_not_implemented_message)
-    data_menu.addAction(load_cdf_action)
+    # Add "Manage tplot variables..." action to the "Data" menu
+    tplot_action = QAction("Manage tplot variables...", main_window)
+    tplot_action.triggered.connect(show_not_implemented_message)
+    data_menu.addAction(tplot_action)

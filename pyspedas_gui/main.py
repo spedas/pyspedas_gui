@@ -2,7 +2,7 @@ import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QMenuBar, QMenu, QVBoxLayout, QWidget
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
-from main_menubar import add_file_actions, add_data_actions
+from main_menubar import add_file_actions, add_data_actions, add_plot_actions, add_analysis_actions, add_help_actions
 
 
 class MainWindow(QMainWindow):
@@ -30,18 +30,21 @@ class MainWindow(QMainWindow):
         self.file_menu = QMenu("File", self)
         self.data_menu = QMenu("Data", self)
         self.plot_menu = QMenu("Plot", self)
+        self.analysis_menu = QMenu("Analysis", self)
         self.help_menu = QMenu("Help", self)
-        self.about_menu = QMenu("About", self)
 
         self.menu_bar.addMenu(self.file_menu)
         self.menu_bar.addMenu(self.data_menu)
         self.menu_bar.addMenu(self.plot_menu)
+        self.menu_bar.addMenu(self.analysis_menu)
         self.menu_bar.addMenu(self.help_menu)
-        self.menu_bar.addMenu(self.about_menu)
 
         # Add actions to each pull-down menu on the main menu bar
         add_file_actions(self, self.file_menu)
         add_data_actions(self, self.data_menu)
+        add_plot_actions(self, self.plot_menu)
+        add_analysis_actions(self, self.analysis_menu)
+        add_help_actions(self, self.help_menu)
 
         # Set the main window properties
         self.setWindowTitle("pyspedas GUI")
